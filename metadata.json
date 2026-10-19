@@ -1,0 +1,6 @@
+{
+  "name": "Luminary Dining House",
+  "description": "Two Michelin-starred dining house in New York featuring fire-crafted seasonal tasting menus, an acclaimed 900-bottle cellar, interactive plating studies, and reservations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

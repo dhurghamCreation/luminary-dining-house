@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ink: #0b0a09;
+    --ink-card: #141210;
+    --ink-soft: #191613;
+    --cream: #f6f2e9;
+    --cream-muted: rgba(246, 242, 233, 0.65);
+    --gold: #c7a85c;
+    --gold-bright: #e5c97d;
+    --gold-glow: rgba(199, 168, 92, 0.28);
+    --amber: #d07a24;
+    --charcoal: #201c18;
+    --line: rgba(246, 242, 233, 0.12);
+    --line-gold: rgba(199, 168, 92, 0.35);
+  }
+
+  body {
+    background-color: var(--ink);
+    color: var(--cream);
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+    font-variant-numeric: lining-nums tabular-nums;
+    -webkit-font-feature-settings: "lnum", "tnum";
+    font-feature-settings: "lnum", "tnum";
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-italiana {
+    font-family: 'Italiana', serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0a09;
+}
+::-webkit-scrollbar-thumb {
+  background: #332d24;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c7a85c;
+}
+
+/* Tactile 3D Physical Button Styles */
+.btn-gold-3d {
+  background-color: #c7a85c;
+  color: #0b0a09;
+  font-weight: 500;
+  box-shadow: 0 4px 0 #8e7336, 0 6px 14px rgba(0, 0, 0, 0.45);
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+}
+.btn-gold-3d:hover {
+  background-color: #d6b86f;
+  transform: translateY(-1.5px);
+  box-shadow: 0 5.5px 0 #8e7336, 0 10px 22px rgba(199, 168, 92, 0.3);
+}
+.btn-gold-3d:active {
+  transform: translateY(3px) scale(0.985);
+  box-shadow: 0 1px 0 #8e7336, inset 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.btn-pill-3d {
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.6);
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+}
+.btn-pill-3d:hover {
+  transform: translateY(-1px);
+}
+.btn-pill-3d:active {
+  transform: translateY(2px) scale(0.97);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.6), inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Hover Elevation without cursor glitch */
+.card-3d-hover {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.card-3d-hover:hover {
+  transform: translateY(-3.5px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 25px rgba(199, 168, 92, 0.12);
+}
+
+/* Date input calendar picker indicator styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8) sepia(0.5) saturate(2) hue-rotate(5deg);
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes flameFlicker {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(208, 122, 36, 0.45)); }
+  50% { filter: drop-shadow(0 0 20px rgba(229, 201, 125, 0.75)); }
+}
+
+.animate-float {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+.animate-flame {
+  animation: flameFlicker 3s ease-in-out infinite;
+}
+
+/* Shimmer animation */
+@keyframes shimmerWave {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.shimmer-border {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-border::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(229, 201, 125, 0.15), transparent);
+  animation: shimmerWave 3.5s infinite;
+}

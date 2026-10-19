@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luminary Dining House — Two Michelin Star Culinary Experience</title>
+    <meta name="description" content="Two Michelin-starred dining house in New York featuring fire-crafted seasonal tasting menus, an acclaimed 900-bottle cellar, interactive plating studies, and reservations." />
+    <meta property="og:title" content="Luminary Dining House — Two Michelin Star Culinary Experience" />
+    <meta property="og:description" content="Two Michelin-starred dining house in New York featuring fire-crafted seasonal tasting menus, an acclaimed 900-bottle cellar, interactive plating studies, and reservations." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Italiana&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <script>
+      // Gracefully prevent unhandled websocket disconnections in AI Studio preview iframe
+      window.addEventListener('unhandledrejection', function(event) {
+        if (event && event.reason && (
+          String(event.reason).includes('WebSocket') ||
+          String(event.reason?.message || '').includes('WebSocket') ||
+          String(event.reason).includes('failed to connect to websocket')
+        )) {
+          event.preventDefault();
+        }
+      });
+      window.addEventListener('error', function(event) {
+        if (event && event.message && (
+          event.message.includes('WebSocket') ||
+          event.message.includes('failed to connect to websocket')
+        )) {
+          event.preventDefault();
+        }
+      });
+    </script>
+  </head>
+  <body class="bg-[#0b0a09] text-[#f6f2e9] antialiased selection:bg-[#c7a85c] selection:text-[#0b0a09]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
